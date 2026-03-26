@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mê Thái - Ở đây bán món Thái</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pattaya&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        thai: {
+                            light: '#fffbeb',
+                            DEFAULT: '#f59e0b', // Amber-500
+                            dark: '#d97706', // Amber-600
+                            brown: '#78350f', // Amber-900
+                            black: '#1c1917'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Pattaya', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-dots {
+            border-bottom: 2px dotted #d1d5db;
+            flex-grow: 1;
+            margin: 0 10px;
+            position: relative;
+            top: -5px;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-thai-light">
+
+    <!-- 1. HERO SECTION -->
+    <header class="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=1920&q=80" alt="Món Thái" class="w-full h-full object-cover" />
+            <!-- Overlay Gradient Vàng Nâu -->
+            <div class="absolute inset-0 bg-gradient-to-b from-thai-brown/80 via-thai-brown/60 to-black/90"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <h1 class="font-display text-6xl md:text-8xl text-white mb-2 drop-shadow-lg tracking-wide">Mê Thái</h1>
+            <p class="text-2xl md:text-4xl font-medium text-thai mb-10 italic">"Ở đây bán món Thái"</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+                <a href="tel:0938188190" class="flex items-center gap-2 bg-thai hover:bg-thai-dark text-white text-lg font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-thai/50 hover:-translate-y-1 w-full sm:w-auto justify-center">
+                    <i class="fa-solid fa-phone-volume animate-bounce"></i> 0938 188 190
+                </a>
+                <a href="#map-section" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/50 text-white text-lg font-bold py-4 px-8 rounded-full transition-all w-full sm:w-auto justify-center">
+                    <i class="fa-solid fa-location-dot"></i> Xem đường đi
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. ABOUT SECTION -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-1/2">
+                <img src="https://photo.znews.vn/w660/Uploaded/spivpdiv/2022_07_11/275032095_5062938507102690_7264212373148438992_n.jpeg" alt="Không gian quán" class="rounded-2xl shadow-xl w-full h-auto object-cover border-4 border-thai-light">
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <h2 class="font-display text-4xl text-thai-brown">Quán ăn Mê Thái</h2>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Mê Thái chuyên các món ăn Thái chuẩn vị, từ gỏi som tum, padthai đến lẩu tomyum đậm đà... Chút chua chua, cay nồng và béo ngậy chắc chắn sẽ làm bùng nổ vị giác của bạn.
+                </p>
+                <div class="space-y-3 bg-thai-light p-6 rounded-xl border border-thai/20">
+                    <p class="flex items-center gap-3 text-gray-700 font-medium">
+                        <i class="fa-solid fa-map-location-dot text-thai text-xl w-6"></i> 110 Trần Thị Nghỉ, Hạnh Thông, TP. HCM
+                    </p>
+                    <p class="flex items-center gap-3 text-gray-700 font-medium">
+                        <i class="fa-solid fa-clock text-thai text-xl w-6"></i> Giờ mở cửa: 11:00 - 23:00
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. HIGHLIGHTS SECTION (Chuyển lên trước Menu để kích thích chốt đơn) -->
+    <section class="py-16 px-4 bg-thai-light">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl md:text-5xl text-thai-brown mb-3">Món Ngon Nổi Bật</h2>
+                <p class="text-gray-600">Những món "Best Seller" nhất định phải thử khi đến Mê Thái</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Highlight 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://cdn.tgdd.vn/Files/2019/07/26/1181815/lau-thai-hai-san-chua-chua-cay-cay-danh-bay-cai-lanh-202111161130260017.jpg" alt="Lẩu hải sản" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Lẩu Thái Hải Sản</h3>
+                        <p class="text-thai-dark font-bold text-lg mb-4">269.000đ</p>
+                        <a href="tel:0938188190" class="block w-full py-2 bg-thai hover:bg-thai-dark text-white font-semibold rounded-lg transition">Đặt ngay</a>
+                    </div>
+                </div>
+                <!-- Highlight 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=600&q=80" alt="Padthai" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Padthai Truyền Thống</h3>
+                        <p class="text-thai-dark font-bold text-lg mb-4">89.000đ</p>
+                        <a href="tel:0938188190" class="block w-full py-2 bg-thai hover:bg-thai-dark text-white font-semibold rounded-lg transition">Đặt ngay</a>
+                    </div>
+                </div>
+                <!-- Highlight 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://cdn.tgdd.vn/2021/10/CookRecipe/Avatar/chan-ga-sot-thai-thumbnail.jpg" alt="Chân gà sốt Thái" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Chân Gà Sốt Thái</h3>
+                        <p class="text-thai-dark font-bold text-lg mb-4">69.000đ</p>
+                        <a href="tel:0938188190" class="block w-full py-2 bg-thai hover:bg-thai-dark text-white font-semibold rounded-lg transition">Đặt ngay</a>
+                    </div>
+                </div>
+                <!-- Highlight 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://file.hstatic.net/200000700229/article/thit-xien-nuong_6a7113b291e94d46857cfa384a641f80.jpg" alt="Xiên nướng" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 text-center">
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Xiên Heo Nướng</h3>
+                        <p class="text-thai-dark font-bold text-lg mb-4">Từ 59.000đ</p>
+                        <a href="tel:0938188190" class="block w-full py-2 bg-thai hover:bg-thai-dark text-white font-semibold rounded-lg transition">Đặt ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MENU SECTION (CORE) -->
+    <section class="py-20 px-4 bg-white" id="menu">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl text-thai-brown mb-4">Thực Đơn Mê Thái</h2>
+                <div class="w-24 h-1 bg-thai mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Menu Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
+
+                <!-- Som Tum -->
+                <div>
+                    <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🥗</span> Mê Som Tum</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi đu đủ mắm Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">59k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi đu đủ tôm khô</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">69k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi đu đủ ba khía</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">79k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi đu đủ chân gà</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">89k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi đu đủ sò huyết</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">99k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi đu đủ hải sản</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">119k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi xoài chua cay</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">49k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi xoài tôm khô</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">69k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Gỏi xoài cá trê</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">89k</span></li>
+                    </ul>
+                </div>
+
+                <!-- Nướng -->
+                <div>
+                    <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🍢</span> Mê Nướng</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Xiên heo phô mai (2 xiên)</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">59k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Xiên heo nướng (3 xiên)</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">79k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Xiên heo nướng kèm xôi</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">89k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Xiên heo nướng cơm lam</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">99k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Nọng heo mắm Thính kèm xôi</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">149k</span></li>
+                    </ul>
+                </div>
+
+                <!-- Padthai & Tomyum -->
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🍜</span> Mê Padthai</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-end"><span class="font-semibold text-gray-700">Padthai truyền thống</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">89k</span></li>
+                            <li class="flex items-end"><span class="font-semibold text-gray-700">Mì trộn sốt Mê Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">89k</span></li>
+                            <li class="flex items-end"><span class="font-semibold text-gray-700">Miến trộn thịt bằm</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">69k</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🍲</span> Mê Tomyum</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-end"><span class="font-semibold text-gray-700 text-sm">Soup tomyum hải sản nước trong</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">89k</span></li>
+                            <li class="flex items-end"><span class="font-semibold text-gray-700 text-sm">Soup tomyum hải sản nước béo</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">99k</span></li>
+                            <li class="flex items-end"><span class="font-semibold text-gray-700">Miến đặc biệt kiểu Mê Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">159k</span></li>
+                            <li class="flex items-end"><span class="font-semibold text-gray-700">Soup sườn cay ớt xiêm xanh</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">179k</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cơm - Lẩu -->
+                <div>
+                    <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🍛</span> Mê Cơm - Mê Lẩu</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Cơm chiên mắm Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">99k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Cơm chiên trái thơm</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">119k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Lẩu Thái hải sản</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">269k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Lẩu tomyum hải sản</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">289k</span></li>
+                    </ul>
+                </div>
+
+                <!-- Sốt Thái -->
+                <div>
+                    <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🌶</span> Mê Sốt Thái</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Chân gà sốt Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">69k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Tôm sống sốt Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">119k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Sò huyết sốt Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">119k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Bạch tuộc sốt Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">139k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Hải sản sốt Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">179k</span></li>
+                    </ul>
+                </div>
+
+                <!-- Ăn Vặt -->
+                <div>
+                    <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🍟</span> Mê Ăn Vặt</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Khoai tây chiên</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">39k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Trứng lòng đào sốt Mê Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">49k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Nghêu hấp Thái</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">79k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Cánh gà chiên vị tomyum</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">89k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Chân gà chiên giòn bơ cay</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">99k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Bạch tuộc sốt bơ cay</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">139k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Ốc hương sốt bơ cay</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">149k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Xôi xoài</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">39k</span></li>
+                    </ul>
+                </div>
+
+                <!-- Món Ăn Kèm & Nước -->
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🍚</span> Món ăn kèm</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-end"><span class="font-semibold text-gray-700">Cơm lam</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">20k</span></li>
+                            <li class="flex items-end"><span class="font-semibold text-gray-700">Xôi nếp</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">15k</span></li>
+                            <li class="flex items-end"><span class="font-semibold text-gray-700 text-sm">Bún/bánh đa/miến/mì gói</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">10k</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-thai-brown mb-5 flex items-center gap-2"><span class="text-3xl">🧋</span> Trà & Thức uống</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Trà sữa Thái đỏ / xanh</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">27k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Trà tắc / trà chanh</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">22k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Trà xanh xí muội</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">25k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Coca / 7Up</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">20k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Nước suối</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">15k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Heineken bạc</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">32k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Tiger bạc</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">28k</span></li>
+                        <li class="flex items-end"><span class="font-semibold text-gray-700">Tiger nâu</span><span class="menu-dots"></span><span class="font-bold text-thai-dark">26k</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FEEDBACK KHÁCH HÀNG -->
+    <section class="py-16 px-4 bg-thai/10">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="font-display text-4xl text-thai-brown mb-10">Khách Hàng Nói Gì Về Mê Thái?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-thai/20 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-thai/20 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-4 relative z-10 mt-4">"Đồ ăn đậm vị Thái, chua cay mặn ngọt rất hài hòa. Giá cả quá hợp lý so với chất lượng."</p>
+                    <div class="text-thai-dark font-bold">- Bạn Linh Nhi</div>
+                    <div class="text-yellow-400 text-sm mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-thai/20 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-thai/20 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-4 relative z-10 mt-4">"Lẩu tomyum cực ngon, nước dùng béo ngậy tôm tươi rói. Sẽ ghé lại quán nhiều lần nữa."</p>
+                    <div class="text-thai-dark font-bold">- Anh Hoàng Nam</div>
+                    <div class="text-yellow-400 text-sm mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-thai/20 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-thai/20 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-4 relative z-10 mt-4">"Quán đông nhưng nhân viên phục vụ nhanh, món lên nóng hổi. Rất ưng ý với món chân gà sốt Thái."</p>
+                    <div class="text-thai-dark font-bold">- Chị Phương Trinh</div>
+                    <div class="text-yellow-400 text-sm mt-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. BẢN ĐỒ & LIÊN HỆ -->
+    <section id="map-section" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+            <!-- Info -->
+            <div class="w-full lg:w-1/3 bg-thai-brown text-white p-10 flex flex-col justify-center">
+                <h2 class="font-display text-4xl mb-6 text-thai-light">Liên Hệ Đặt Bàn</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-location-dot text-2xl text-thai mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg text-thai">Địa chỉ</h4>
+                            <p class="text-gray-200">110 Trần Thị Nghỉ, Phường 7, Gò Vấp (Hạnh Thông), TP. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-phone text-2xl text-thai mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg text-thai">Hotline</h4>
+                            <p class="text-gray-200 text-xl font-bold">0938 188 190</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fa-solid fa-clock text-2xl text-thai mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg text-thai">Giờ hoạt động</h4>
+                            <p class="text-gray-200">11:00 Sáng - 23:00 Đêm (Thứ 2 - CN)</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="tel:0938188190" class="mt-8 bg-thai hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-full text-center transition shadow-lg">Gọi Ngay Cho Quán</a>
+            </div>
+
+            <!-- Map -->
+            <div class="w-full lg:w-2/3 h-[400px] lg:h-auto min-h-[400px]">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.799767675338!2d106.67822997570375!3d10.82662895826955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528fd82759e35%3A0xc3afbf68ff66c5d1!2zMTEwIFRy4bqnbiBUaOG7iyBOZ2jEqSwgUGjGsOG7nW5nIDcsIEfDsiBW4bqlcCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s!4v1716500000000!5m2!1svi!2s"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="bg-thai-black text-gray-300 py-12 px-4 border-t-4 border-thai">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+            <!-- Cột 1 -->
+            <div class="space-y-4">
+                <h2 class="font-display text-4xl text-thai">Mê Thái</h2>
+                <p class="text-sm italic">"Ở đây bán món Thái"<br>Hương vị chuẩn Thái giữa lòng Sài Gòn.</p>
+            </div>
+
+            <!-- Cột 2 -->
+            <div class="space-y-2">
+                <h3 class="font-bold text-white text-lg mb-4">Thông Tin</h3>
+                <p><i class="fa-solid fa-map-pin w-5 text-thai"></i> 110 Trần Thị Nghỉ, Hạnh Thông, HCM</p>
+                <p><i class="fa-solid fa-phone w-5 text-thai"></i> Hotline: <a href="tel:0938188190" class="text-white hover:text-thai">0938 188 190</a></p>
+                <p><i class="fa-solid fa-clock w-5 text-thai"></i> Mở cửa: 11:00 - 23:00</p>
+            </div>
+
+            <!-- Cột 3 -->
+            <div>
+                <h3 class="font-bold text-white text-lg mb-4">Kết nối với chúng tôi</h3>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 transition text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:-translate-y-1 transition text-xl border border-gray-700"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-10 text-center text-sm border-t border-gray-800 pt-6">
+            © 2024 Quán ăn Mê Thái. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Floating Call Button (Dành cho Mobile) -->
+    <a href="tel:0938188190" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-[0_0_15px_rgba(34,197,94,0.5)] hover:scale-110 transition z-50 animate-bounce">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+</body>
+
+</html>
